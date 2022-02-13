@@ -16,7 +16,7 @@ class KNNClassifier:
     def predict(self, X, n_loops=0):
         """
         Uses the KNN model to predict classes for the data samples provided
-        
+
         Arguments:
         X, np array (num_samples, num_features) - samples to run
            through the model
@@ -64,7 +64,7 @@ class KNNClassifier:
 
         Arguments:
         X, np array (num_test_samples, num_features) - samples to run
-        
+
         Returns:
         distances, np array (num_test_samples, num_train_samples) - array
            with distances between each test and each train sample
@@ -97,12 +97,12 @@ class KNNClassifier:
     def predict_labels_binary(self, distances):
         """
         Returns model predictions for binary classification case
-        
+
         Arguments:
         distances, np array (num_test_samples, num_train_samples) - array
            with distances between each test and each train sample
         Returns:
-        pred, np array of bool (num_test_samples) - binary predictions 
+        pred, np array of bool (num_test_samples) - binary predictions
            for every test sample
         """
 
@@ -131,12 +131,12 @@ class KNNClassifier:
     def predict_labels_multiclass(self, distances):
         """
         Returns model predictions for multi-class classification case
-        
+
         Arguments:
         distances, np array (num_test_samples, num_train_samples) - array
            with distances between each test and each train sample
         Returns:
-        pred, np array of int (num_test_samples) - predicted class index 
+        pred, np array of int (num_test_samples) - predicted class index
            for every test sample
         """
 
@@ -160,4 +160,3 @@ class KNNClassifier:
                 # prediction[i] = np.argmax(np.bincount(neighbor_classes))
                 # print(prediction[i])
         return prediction
-

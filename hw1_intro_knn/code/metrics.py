@@ -1,5 +1,4 @@
 import numpy as np
-import functools
 
 
 def check_0_div(func):
@@ -29,6 +28,7 @@ def accuracy(tp, tn, n):
 @check_0_div
 def f1(tp, fp, fn):
     return 2*tp/(2*tp + fp + fn)
+
 
 def binary_classification_metrics(y_pred, y_true):
     """
