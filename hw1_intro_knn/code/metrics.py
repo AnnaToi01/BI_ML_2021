@@ -37,7 +37,7 @@ def binary_classification_metrics(y_pred, y_true):
     y_pred, np array (num_samples) - model predictions
     y_true, np array (num_samples) - true labels
     Returns:
-    precision, recall, f1, accuracy - classification metrics
+    precision_val, recall_val, accuracy_val, f1_val - classification metrics
     """
     n = y_pred.shape[0]
     tp = np.sum((y_pred == y_true) & (y_true == 1))
@@ -103,7 +103,7 @@ def mae(y_pred, y_true):
     y_pred, np array of int (num_samples) - model predictions
     y_true, np array of int (num_samples) - true values
     Returns:
-    mae - mean absolut error
+    mae - mean absolute error
     """
     n = len(y_pred)
     mae = np.sum(np.abs(y_true-y_pred))/n
